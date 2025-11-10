@@ -1,0 +1,215 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage[left=1.8cm, right=1.8cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{sectsty}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+% --- Spacing tuned for 2 pages & readability ---
+\renewcommand{\baselinestretch}{1.09}
+\sectionfont{\fontsize{12}{14}\selectfont}
+\subsectionfont{\fontsize{11}{13}\selectfont}
+\setlist[itemize]{leftmargin=*, itemsep=0.15em, topsep=0.15em, parsep=0pt}
+\setlist[enumerate]{itemsep=0.15em, topsep=0.15em, parsep=0pt}
+\newcommand{\sectionsep}{\vspace{0.28cm}} % gentle section spacing
+
+% --- Sha symbol ---
+\usepackage{amssymb}
+\DeclareFontFamily{U}{wncy}{}
+\DeclareFontShape{U}{wncy}{m}{n}{<->wncyr10}{}
+\DeclareSymbolFont{mcy}{U}{wncy}{m}{n}
+\DeclareMathSymbol{\Sha}{\mathord}{mcy}{"58}
+
+% Hanging-indent list for publications
+\newenvironment{publist}{%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{1.2em}%
+    \setlength{\itemindent}{-1.2em}%
+    \setlength{\itemsep}{0.25em}%
+    \setlength{\parsep}{0pt}%
+  }%
+}{\end{list}}
+
+% A small middle dot with spacing
+\newcommand{\middot}{\ \textperiodcentered\ }
+
+
+
+
+\begin{document}
+
+% =========================
+% Header
+% =========================
+\begin{center}
+    {\Large \textbf{Jack Westbrook}}\\[0.1cm]
+    \textit{Email: jackswestbrook@gmail.com \quad Website: \href{https://westbrookjack.github.io/}{westbrookjack.github.io} \quad GitHub: \href{https://github.com/westbrookjack}{westbrookjack}}\\[0.06cm]
+    {\small \textbf{Research interests:} Arithmetic geometry; Galois/automorphic representations; elliptic curves (BSD, Selmer/\(\Sha\)); \(p\)-adic Hodge/cohomology; mixed-characteristic commutative algebra}
+\end{center}
+
+
+\hrule
+\sectionsep
+
+% =========================
+% Education
+% =========================
+\section*{Education}
+\begin{itemize}[leftmargin=*, label={}]
+  \item \textbf{Imperial College London}, MSc in Pure Mathematics \hfill Expected September 2026
+  \begin{itemize}[label={},leftmargin=1.5em]
+    \item \textit{MSc thesis (in progress):} topic TBA; prospective advisor: \textbf{George Boxer} (to be confirmed).
+  \end{itemize}
+
+  \item \textbf{University of Wisconsin--Madison}, Bachelor of Arts in Mathematics \hfill May 2025
+  \begin{itemize}[label={},leftmargin=1.5em]
+    \item Graduate Math GPA: 3.91/4.00 \,·\, Overall GPA: 3.63/4.00
+
+  \end{itemize}
+\end{itemize}
+
+\sectionsep
+
+% =========================
+% Publications & Preprints
+% =========================
+\section*{Publications and Preprints}
+\begin{publist}
+  \item \textbf{On Deformation of Perfectoid Purity in Gorenstein Domains},
+  with Baily, Dovgodko, Simpson. \textit{Submitted.}
+  \href{https://arxiv.org/abs/2504.02966}{Preprint (arXiv:2504.02966)}.
+
+  \item \textbf{Some Applications of the Brenner--Monsky Quartic},
+  with Dovgodko and Simpson. \textit{In preparation (2025).}
+  (Formerly “Hilbert--Kunz Multiplicity in a Two-Parameter Family”.)
+  \href{https://lsa.umich.edu/content/dam/math-assets/reu-su22/reu-2024/Dovgodko%20and%20Westbrook_hkm_two_parameters.pdf}{Early draft}.
+
+  \item \textbf{Examples of Lie Algebras with Specified Newton Polygons},
+  with Alwan, K.~Huang, T.~Huang, Stovall. \textit{In preparation (2025).} (Formerly “Exploring Notions of Curvature in Higher Dimensions”.)
+\end{publist}
+
+
+\sectionsep
+
+% =========================
+% Research Experience
+% =========================
+\section*{Research Experience}
+\textbf{Research Assistant (REU)}, University of Michigan--Ann Arbor \hfill Summer 2024\\
+\textit{Supervisor: Dr.~Austyn Simpson}\\
+-- Produced the first \textit{two-parameter family} with varying Hilbert--Kunz multiplicities by combining Monsky/Trivedi density methods with new Segre-product constructions; \textbf{co-authored} resulting paper.\\
+-- Initiated constructions toward lifting \textit{F}-purity \(\to\) perfectoid purity in mixed characteristic; \textbf{co-authored} a submission.\\
+-- Implemented Macaulay2 routines for Segre and Veronese presentations; groundwork for a future package release.
+
+\vspace{0.12cm}
+\noindent\textbf{Research Assistant (REU)}, University of Wisconsin--Madison \hfill Summer 2022\\
+\textit{Supervisor: Dr.~Betsy Stovall}\\
+-- Computed Newton polygons associated to vector fields in \(\mathbb{R}^n\) for \(n\le 14\).\\
+-- Developed combinatorial arguments giving bounds in all dimensions; presented results in three venues; \textbf{co-authored} a forthcoming paper.
+
+\vspace{0.12cm}
+\noindent\textbf{Undergraduate Researcher}, Madison Experimental Mathematics Lab \hfill Fall 2022\\
+\textit{Supervisor: Dr.~Feng Zhu}\\
+-- Constructed explicit generators in \(\mathrm{PSL}(2,\mathbb{R})\) for isometry subgroups of hyperbolic surfaces.\\
+-- Studied Teichmüller theory and presented a poster to students and faculty.
+
+\sectionsep
+
+% =========================
+% Notes & Software
+% =========================
+\section*{Selected Notes \& Software}
+\begin{itemize}[leftmargin=*, itemsep=0.28em]
+  \item \textbf{Solutions to \textit{The Rising Sea}} — 150+ pp comprehensive solutions and proofs. \href{https://github.com/westbrookjack/vakil-solutions}{Link}
+  \item \textbf{Solutions to \textit{The Arithmetic of Elliptic Curves}} — selected exercises and expanded proofs from the text. \href{https://github.com/westbrookjack/Solutions-to-The-Arithmetic-of-Elliptic-Curves}{Link}
+  \item \textbf{A Proof of Quadratic Reciprocity by Galois Theory} — exposition based on a proof sketched by Prof. Ana Caraiani, expanding it into a complete Galois-theoretic derivation of quadratic reciprocity.
+  \href{https://github.com/westbrookjack/quadratic-reciprocity-galois}{Link}
+  \item \textbf{Macaulay2: Segre Presentations} — prototype algorithms developed during the 2024 UM REU for computing presentations of Segre products of graded rings. \href{https://github.com/westbrookjack/SegrePresentation}{Link}
+
+\item \textbf{Macaulay2: Veronese Presentations} — companion package for computing presentations of Veronese subrings in graded rings. \href{https://github.com/westbrookjack/VeronesePresentation}{Link}
+
+\item \textbf{Original Number Theory Problems} — authored 9 problems with full solutions on Diophantine and modular themes; one used for a UW–Madison Putnam Club meeting where students worked on the problem and I presented the solution. \href{https://github.com/westbrookjack/my-NT-problems}{Link}
+
+
+
+
+\end{itemize}
+
+
+
+\sectionsep
+
+% =========================
+% Selected Presentations
+% =========================
+\section*{Selected Presentations}
+\begin{itemize}[leftmargin=*]
+  \item ``Hilbert--Kunz Multiplicity in a Two-Parameter Family,'' \textit{University of Michigan REU}, 2024
+  \item ``The Isomorphism Theorems in Abelian Categories,'' \textit{UW--Madison Math Club}, 2024
+  \item ``Constructing Gödel's Constructible Universe,'' \textit{Directed Reading Program}, 2023
+  \item ``Curvature in Families of Curves,'' \textit{UNC Analysis \& PDE Seminar}, 2022
+\end{itemize}
+
+
+
+\sectionsep
+
+% =========================
+% Coursework
+% =========================
+\section*{Selected Graduate Coursework}
+\small
+Algebraic Number Theory; Elliptic Curves; Galois Theory; Algebraic Geometry I; Lie Algebras; Topology I--II; Complex Analysis; Measure Theory; Algebra I--II.
+\normalsize
+
+
+
+\sectionsep
+
+% =========================
+% Teaching & Mentorship
+% =========================
+\section*{Teaching and Mentorship}
+\noindent \textbf{Directed Reading Program Mentor}, Imperial College \hfill 2025--2026\\
+-- Led a reading group on elliptic curves and introductions to Galois representations; designed tailored study plans.
+
+\vspace{0.08cm}
+\noindent\textbf{Course Assistant}, Math Learning Center, UW--Madison \hfill 2023--2025\\
+-- Supported MATH 340, 341, 421, 551 (Linear Algebra/Analysis/Topology); received strong student and faculty feedback.
+
+\vspace{0.08cm}
+\noindent\textbf{Athletic Math Tutor}, UW--Madison \hfill Summer 2023\\
+-- Tutored incoming student-athletes for placement exams; created custom study materials and practice sets.
+
+\sectionsep
+
+% \section*{Honors and Awards}
+% Dean’s List, UW--Madison — Spring 2023, Fall 2023, Spring 2024
+
+\sectionsep
+
+% =========================
+% Skills
+% =========================
+\section*{Honors and Technical Skills}
+Dean’s List, UW--Madison — Spring 2023, Fall 2023, Spring 2024.\\
+\textbf{Programming:} Macaulay2 (package dev), SageMath, Python, MATLAB, C++, Rust \quad
+\textbf{Tools:} \LaTeX, Git, HTML/CSS
+
+\normalsize
+
+% =========================
+% Footer
+% =========================
+\vspace{0.22cm}
+\begin{center}
+\small Last updated: November 2025
+\end{center}
+
+\end{document}
