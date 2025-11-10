@@ -4,6 +4,9 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,14 +14,30 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install TeX Live
+      - name: Install TeX Live (minimal set)
         run: |
           sudo apt-get update
-          sudo apt-get install -y texlive-full
+          sudo apt-get install -y \
+            latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended \
+            texlive-fonts-extra texlive-science texlive-lang-english
 
+      # Change MAIN_TEX if your entry file isn't CV.tex (e.g., main.tex)
       - name: Compile LaTeX
+        env:
+          MAIN_TEX: CV.tex
         run: |
-          latexmk -pdf -interaction=nonstopmode -halt-on-error CV.tex
+          if [ ! -f "$MAIN_TEX" ]; then
+            echo "Could not find $MAIN_TEX. Listing .tex files:"; ls -1 *.tex || true
+            echo "Set MAIN_TEX to your entry file (e.g., main.tex) in the step env."
+            exit 1
+          fi
+          latexmk -pdf -interaction=nonstopmode -halt-on-error "$MAIN_TEX"
+          # If the PDF has a different name, normalize it to CV.pdf
+          OUTPDF="${MAIN_TEX%.tex}.pdf"
+          if [ "$OUTPDF" != "CV.pdf" ]; then
+            cp "$OUTPDF" CV.pdf
+          fi
+          test -f CV.pdf || (echo "Build produced no CV.pdf" && exit 1)
 
       - name: Commit compiled PDF back to repo
         run: |
